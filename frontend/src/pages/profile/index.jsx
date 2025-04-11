@@ -117,13 +117,13 @@ export default function ProfilePage() {
             <img className={styles.backDrop} src={userProfile.userId.profilePictureUrl} alt="" />
           </div>
           <div className={styles.profileContainer_details}>
-            <div style={{display:"flex",gap:"0.7rem"}}>
+            <div className={styles.profileContainer_main} style={{display:"flex",gap:"0.7rem"}}>
               <div style={{flex:"0.8"}}>
-                  <div style={{display:"flex",width:"fit-content",alignItems:"center",gap:"1.2rem"}}>
+                  <div className={styles.profile_viewContainer} style={{display:"flex",width:"fit-content",alignItems:"center",gap:"1.2rem"}}>
                     <input className={styles.nameEdit} type="text" onChange={(e)=>{
                       setUserProfile({...userProfile,userId:{...userProfile.userId,name:e.target.value}});
                     }} value={userProfile.userId.name}/>
-                    <p style={{color:"grey"}}>@{userProfile.userId.username}</p>
+                    <p className={styles.profile_viewContainerUsername} style={{color:"grey"}}>@{userProfile.userId.username}</p>
                   </div>
                     <div style={{marginTop:"0.4rem"}}>
                       <textarea onChange={(e)=>{
@@ -133,7 +133,7 @@ export default function ProfilePage() {
               </div>
 
               <div style={{flex:"0.2"}}>
-                    <h3>RecentActivity</h3>
+                    <h3 style={{textAlign:"center"}}>RecentActivity</h3>
                     {userPosts.map((post)=>{
                       return (
                         <div key={post._id} className={styles.postCard}>

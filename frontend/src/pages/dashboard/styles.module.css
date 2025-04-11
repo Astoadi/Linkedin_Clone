@@ -179,7 +179,10 @@
     border-radius: 50%;
 }
 
-@media screen and (max-width:850px){
+@media(max-width:850px){
+    .userProfile{
+        display: none;
+    }
     .allCommentsContainer{
         width:90svw;
     }

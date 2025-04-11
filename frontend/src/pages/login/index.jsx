@@ -82,7 +82,7 @@ function LoginComponent() {
                         </div>
                         <div className={styles.cardContainer_right}>
                             <div>
-                                <p>{!userLoginMethod?"Already Have an Account?":"Don't Have an Account?"}</p>
+                                <p style={{whiteSpace:"nowrap"}}>{!userLoginMethod?"Already Have an Account?":"Don't Have an Account?"}</p>
                                 <div onClick={()=>setLoginMethod(!userLoginMethod)} className={styles.buttonWithOutline}>
                                     <p>{!userLoginMethod?"Sign In":"Sign Up"}</p>
                                 </div>

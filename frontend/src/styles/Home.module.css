@@ -39,7 +39,7 @@
 
 @media(max-width:950px){
     .container{
-        padding-top:10rem;
+        padding-top:5rem;
     }
     .mainContainer{
         flex-direction: column;
@@ -51,6 +51,6 @@
 }
 @media(max-width:600px){
     .mainContainer_right>img{
-        width:20em;
+        width:100%;
     }
 }

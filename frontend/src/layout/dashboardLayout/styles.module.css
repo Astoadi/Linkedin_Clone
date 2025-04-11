@@ -51,7 +51,7 @@
     height: 6vh;
     display: none;
     justify-content: space-around;
-    background: white;
+    background: rgb(200, 231, 240);
     align-items: center;
     cursor: pointer;
 }
@@ -60,7 +60,7 @@
     width: 1.2rem;
 }
 
-@media only screen and (max-width:600px) { /*it means that it will work only up to the 600px after that it will not work*/
+@media(max-width:600px) { /*it means that it will work only up to the 600px after that it will not work*/
     .homeContainer_extraContainer{
         display: none;
     }
@@ -75,6 +75,6 @@
         margin-bottom: 2rem;
     }
     .homeContainer_feedContainer{
-        padding-bottom:12vh;
+        padding-bottom:10vh;
     }
 }

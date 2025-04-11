@@ -21,8 +21,8 @@ import { useRouter } from 'next/router';
    return (
      <UserLayout>
         <DashBoardLayout>
-            <div>
-                <h1>Discover</h1>
+            <div className={styles.discoverContainer}>
+                <h1 style={{textAlign:"center"}}>Discover</h1>
                 <div className={styles.allUserProfile}>
                   {authState.allProfilesFetched && authState.allUsers.map((user)=>{
                     return (

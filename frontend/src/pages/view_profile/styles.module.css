@@ -33,7 +33,7 @@
 }
 .card{
     display: flex;
-    flex-direction: column;
+
     align-items: center;
     gap:1rem;
 }
@@ -79,3 +79,12 @@
     box-shadow: 10px 10px 15px rgb(173,173,173);
 }
 
+@media(max-width:1200px){
+    .profileContainer_flex{
+        flex-direction: column;
+        gap:1.2rem;
+    }
+    .card{
+        padding-top: 1rem;;
+    }
+}

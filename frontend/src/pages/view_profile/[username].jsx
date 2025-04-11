@@ -93,7 +93,7 @@ export default function ViewProfilePage({userProfile}) {
               </div>
 
               <div style={{flex:"0.2"}}>
-                    <h3>RecentActivity</h3>
+                    <h3 style={{textAlign:"start"}}>RecentActivity</h3>
                     {userPosts.map((post)=>{
                       return (
                         <div key={post._id} className={styles.postCard}>

@@ -36,9 +36,11 @@
 }
 .card_profileContainer{
     display: flex;
+    width: fit-content;
 }
 .card_profileContainer>img{
     width: 3.4rem;
+    min-width: 3.4rem;
     height: auto;
     height: 3.4rem;
     object-fit: cover;
@@ -154,4 +156,31 @@
     outline: none;
     border:1px solid silver;
     border-radius:10px;
+}
+@media(max-width:600px){
+    .profileContainer_main{
+        flex-direction: column;
+    }
+    .profile_viewContainer{
+        flex-direction: column ;
+        gap:0.6rem !important;
+    }
+    .profile_viewContainerUsername{
+        display: flex !important;
+        justify-content: flex-start !important;
+        width: 100% !important;
+        padding-inline: 0.6rem !important;
+    }
+    .card_profileContainer>img{
+        width: 20% !important;
+        height: 20% !important;
+    }
+    .card_profileContainer{
+        width: fit-content;
+        justify-content: center;
+        padding-top: 1rem;
+    }
+    .card{
+        flex-direction: row;
+    }
 }
