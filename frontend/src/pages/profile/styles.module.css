@@ -1,0 +1,157 @@
+.container{
+    padding:1.2rem;
+    background: rgb(244, 244, 244);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.backDropContainer{
+    width: 100%;
+    height: 30vh;
+    background: url('https://images.pexels.com/photos/5733756/pexels-photo-5733756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border-radius: 20px;
+}
+.backDropContainer img{
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: 8%;
+    text-align: center;
+}
+
+.profileContainer_details{
+    padding-top: 6.6rem;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1.4rem;
+}
+.card_profileContainer{
+    display: flex;
+}
+.card_profileContainer>img{
+    width: 3.4rem;
+    height: auto;
+    height: 3.4rem;
+    object-fit: cover;
+}
+.backDrop_overlay{
+    width: 10em;
+    height: 10em;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -30%;
+    left: 8%;
+    text-align: center;
+    z-index: 4;
+    transition: all 0.35s;
+    color:rgba(255,255,255,0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.backDrop_overlay:hover{
+    opacity: 0.7;
+    background: black;
+    color:rgba(255,255,255,1);
+    cursor: pointer;
+}
+.profileContainer_details input{
+    outline: none;
+    border-style: none;
+    padding-inline: 10px;
+    padding-block: 9px;
+}
+.nameEdit{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.workHistoryContainer{
+    display: flex;
+    /* flex-direction: column; */
+    gap: 1.4rem;
+    padding-top: 1.4rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.workHistoryCard{
+    width: fit-content;
+    min-width: fit-content;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    box-shadow: 10px 10px 15px rgb(173,173,173);
+}
+
+.updateButton{
+    padding-inline:0.8rem;
+    padding-block:0.3rem;
+    border: 1px solid rgba(3,93,183,0.905);
+    outline: none;
+    color: rgba(3,93,183,0.905);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.bioPlaceHolder{
+    width:80%;
+    outline:none;
+    border:none;
+    padding-inline: 10px;
+    padding-block: 9px;
+    resize: none;
+    font-size: 1.1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+}
+.addWorkButton{
+    border: 2px dotted silver;
+    padding-inline: 1.3rem;
+    width: fit-content;
+    background: white;
+    padding-block: 1rem;
+    cursor: pointer;
+    margin: 1rem;
+}
+.addWorkContainer{
+    position:fixed;
+    z-index: 4;
+    top: 0;
+    left:0;
+    height:100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.7);
+}
+.addWorkContainer_main{
+    height:fit-content;
+    width: 40vw;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    position: relative;
+    left:30%;
+    top:10%;
+    padding: 1.4rem;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    gap:1.2rem
+}
+.inputField{
+    padding-block: 0.6rem;
+    padding-inline: 1rem;
+    outline: none;
+    border:1px solid silver;
+    border-radius:10px;
+}

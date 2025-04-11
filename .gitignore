@@ -1,0 +1,11 @@
+.env
+
+backend/node_modules
+
+backend/api.http
+
+frontend/node_modules
+
+frontend/.next
+
+
