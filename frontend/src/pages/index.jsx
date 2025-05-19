@@ -2,8 +2,17 @@ import Head from "next/head";
 import UserLayout from "@/layout/userLayout";
 import styles from "@/styles/Home.module.css";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { clientServer } from "@/config";
 export default function Home() {
   const router=useRouter();
+  const startingServer=async ()=>{
+    const response=await clientServer.get('/');
+    console.log(response.data?.message);
+  }
+  useEffect(()=>{
+    startingServer();
+  },[]);
   return (
     <>
     <UserLayout>
