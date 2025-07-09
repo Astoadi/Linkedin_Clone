@@ -65,7 +65,7 @@ export default function DashBoard() {
                 setFileContent(e.target.files[0]);
                 setFileName(e.target.files[0].name);}} hidden  id="fileUpload" />
               { postContent.length > 0 && <div onClick={handleUpload} className={styles.uploadButton} >Post</div>}
-              {fileName.length >0 && <p>{fileName}</p> }
+              {fileName.length >0 && <p className={styles.fileNameDisplay}>📎{fileName}</p> }
             </div>
 
             <div className={styles.postContainer}>

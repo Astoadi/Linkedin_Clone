@@ -1,118 +1,151 @@
 .scrollComponent{
     display: flex;
     justify-content: center;
+    padding: 1rem 0;
 }
 .wrapper{
     display: flex;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 800px;
+    width: 100%;
+    gap: 2rem;
 }
 .createPostContainer{
     display: flex;
-    height: 10svh;
-    width: 100%;
-    padding-inline: 0.8rem;
-    gap:1.3rem;
-    position: relative;
+    flex-wrap: wrap;
     align-items: center;
-    background: rgb(248, 237, 237);
+    gap: 1rem;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
 }
 .uploadButton{
     position: absolute;
-    right: 0;
-    bottom:-50px;   
+    right: 1rem;
+    bottom:-40px;   
     cursor: pointer;
-    background-color: aquamarine;
+    background: linear-gradient(90deg, #00c9ff, #92fe9d);
     color:white;
-    padding-inline:1rem;
-    padding-block: 0.6rem;
-    border-radius: 10px;
+    padding:0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    transition: background 0.3s ease;
+}
+.uploadButton:hover {
+    background: linear-gradient(90deg, #00b8e6, #78f07f);
+}
+.postContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
 }
 .userProfile{
-    border-radius: 100%;
-    height:60%;
-    width: fit-content;
+    border-radius: 50%;
+    height:48px;
+    width: 48px;
+    object-fit: cover;
 }
 .fab {
     display: flex;
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    width: 40px; /* Adjust width */
-    height: 40px; /* Adjust height */
-    background-color: #f0f0f0; /* Optional background */
-    border-radius: 50%; /* Makes it circular */
+    width: 40px;
+    height: 40px;
+    background-color: #f0f0f0;
+    border-radius: 50%;
 }
 
 .fab > svg {
-    width: 24px; /* Reduce icon size */
+    width: 24px;
     height: 24px;
 }
 .textAreaOfContent{
-    width: 80%;
-    height: 70%;
-    border:1px solid silver;
-    border-radius: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    padding-inline: 1.5rem;
-    padding-block: 0.8rem;
+    flex-grow: 1;
+    min-width: 60%;
+    /* height: 70%; */
+    border:none;
     outline: none;
+    background:#f1f1f1;
+    border-radius: 12px;
+    padding:1rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     resize: none;
 }
 
 .singleCard{
-    width: 100%;
-    border-radius: 10px 10px 0px 0px;
-    border-bottom: 1px solid rgb(179,179,179);
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+.singleCard:hover {
+    transform: translateY(-2px);
 }
 .singleCard_profileContainer{
     display: flex;
     align-items: flex-start;
     gap:1.2rem;
-    padding: 1.2rem;
-    padding-right:.34rem ;
+    padding: 1.2rem 1.2rem 0.5rem;
 }
 .singleCard_profileContainer>img{
-    width:10%;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+    object-fit: cover;
 }
 .singleCard_image{
     width: 100%;
     padding-top: 0.6rem;
-    height: fit-content;
+    border-radius: 10px;
     overflow: hidden;
 }
 .singleCard_image>img{
     width: 100%;
     height: auto;
     object-fit: cover;
+    border-radius: 10px;
 }
 .optionContainer{
     display: flex;
     justify-content: space-between;
-    height:20%;
-    width: 100%;
-    padding-top: 1.3rem;
+    padding-top: 1rem;
 }
 .singleOption_optionContainer{
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap:1.2rem
+    gap:0.6rem;
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
 }
-.singleOption_optionContainer>svg{
+.singleOption_optionContainer:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+.singleOption_optionContainer svg {
+    width: 20px;
+    height: 20px;
+    color: #333;
+}
+/* .singleOption_optionContainer>svg{
     height:100%;
     width: 12%;
     min-width: 1rem;
     cursor: pointer;
-}
+} */
 
 .commentsContainer{
     position: fixed;
+    inset: 0;
     width: 100vw;
     height: 100vh;
-    top:0;
-    left:0;
     z-index: 2;
     background: rgba(0,0,0,0.7);
     overflow: hidden;
@@ -129,6 +162,9 @@
     border-radius: 10px;
     position: relative;
     padding: 1.4rem;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 .postCommentContainer{
     position: absolute;
@@ -138,28 +174,36 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:1.2rem
+    gap:1rem;
+    flex-wrap: wrap;
 }
 .postCommentContainer>input{
     flex: 0.9;
-    padding-inline: 1.5rem;
-    padding-block: 1.2rem;;
-    border: none;
-    outline: none;
-    background-color: rgb(228,228,228);
+    padding: 1rem;
     border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    background-color: #f1f1f1;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    outline: none;
+    width: 100%;
 }
 .postCommentContainer>input:focus{
     border: 1px solid silver;
 }
 .postCommentButton{
-    padding: 1.2rem;
-    flex: 0.1;
-    width: fit-content;
-    padding: 1.2rme;
-    background: orange;
+    padding: 0.8rem 1.4rem;
+    background: #ff7e5f;
+    color: white;
     border-radius: 10px;
+    font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+.postCommentButton:hover {
+    background: #eb5e3c;
 }
 .singleComment{
     display: flex;
@@ -169,28 +213,38 @@
 .singleComment_profileContainer{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     background:rgba(179,179,179,0.7);
     padding:1rem;
     gap:1rem;
+    border-radius: 10px 10px 0 0;
 }
 .singleComment_profileContainer>img{
-    width: 12%;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
+    object-fit: cover;
 }
-
+.fileNameDisplay {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    color: #555;
+    font-style: italic;
+}
 @media(max-width:850px){
     .userProfile{
         display: none;
     }
     .allCommentsContainer{
-        width:90svw;
+        width:90vw;
     }
     .postCommentContainer{
         flex-direction: column;
     }
-    .postCommentContainer>input,.postCommentButton{
+    .postCommentContainer>input,
+    .postCommentButton{
         width: 100%;
-        text-align: center;
+    }
+    .wrapper{
+        max-width: 95%;
     }
 }
