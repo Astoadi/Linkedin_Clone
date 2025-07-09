@@ -27,7 +27,7 @@ export default function DashBoardLayout({children}) {
         <div className={styles.container}>
 
             <div className={styles.homeContainer}>
-
+                {/* Sidebar */}
                 <div className={styles.homeContainer_leftBar}>
                     <div onClick={()=>router.push('/dashboard')} className={styles.sideBarOption}>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -51,20 +51,23 @@ export default function DashBoardLayout({children}) {
                     </div>
 
                 </div>
-
+                {/* Feed */ }
                 <div className={styles.homeContainer_feedContainer}>
                     {children}
                 </div>
-
+                {/* Top Profiles */}
                 <div className={styles.homeContainer_extraContainer}>
-                    <h3 style={{whiteSpace:"nowrap"}}>Top Profiles</h3>
+                    <h3 className={styles.topProfileHeader}>Top Profiles</h3>
                     {
-                        authState.allProfilesFetched && authState.allUsers.map((user)=>(
-                            <div>{user.userId?.name}</div>
+                        authState.allProfilesFetched && authState.allUsers.map((user,idx)=>(
+                            <div className={styles.profileCard} key={idx}>
+                                <p>{user.userId?.name}</p>
+                            </div>
                         ))
                     }
                 </div>
             </div>
+            {/* Mobile Nav */}
             <div className={styles.mobileNavBar}>
                 <div onClick={()=>router.push('/dashboard')} className={styles.singleNavBar_mobileView}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

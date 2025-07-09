@@ -1,22 +1,90 @@
 .container{
     padding:1.2rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 .navbar{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
+.logo{
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #222;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+  
+.logo:hover {
+    color: #fd748b;
+}
 .navbarOptionContainer{
     display: flex;
+    align-items: center;
 }
+.navMenu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+  
+.navLink {
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+  
+.navLink:hover {
+    color: #fd748b;
+}
+  
+.logout {
+    font-weight: 600;
+    color: #e63946;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+  
+.logout:hover {
+    color: #b71c1c;
+}
+  
 .buttonJoin{
     white-space: nowrap;
-    background:#fd748b;
+    background: linear-gradient(135deg, #fd748b, #ffb88c);
     color:white;
-    padding-inline: 1.2rem;
-    padding-block: 0.6rem;
-    border-radius: 10px;
-    font-size: 0.7rem;
+    padding:0.6rem 1.4rem;
+    border-radius: 12px;
+    font-size: 0.85rem;
     font-weight: bold;
     cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(253, 116, 139, 0.3);
 }
+.buttonJoin:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(253, 116, 139, 0.4);
+}
+
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .navMenu {
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+    }
+  
+    .buttonJoin {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  }

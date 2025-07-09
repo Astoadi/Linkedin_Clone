@@ -17,20 +17,28 @@ export default function Home() {
     <>
     <UserLayout>
       <div className={styles.container}>
+          <div className={styles.blurBg} />
         <div className={styles.mainContainer}>
+        <div className={styles.mainCard}>
           <div className={styles.mainContainer_left}>
-            <p>Connect With Friends without Exaggeration</p>
-            <p>A True social media platform, with stories no blufs !</p>
+            <p className={styles.heroTitle}>
+              Connect With Friends without Exaggeration
+              </p>
+            <p className={styles.subTagline}>Your Professional World, Reimagined.</p>
+            <p className={styles.subTitle}>
+              A True social media platform, with stories no blufs !
+            </p>
             <div onClick={()=>{
               router.push("/login")
             }} className={styles.buttonJoin}>
-              <p>Join Now</p>
+              <p>🚀 Get Started</p>
             </div>
           </div>
           <div className={styles.mainContainer_right}>
-            <img src="/images/home_main_connection.jpg"/>
+            <img src="/images/home_main_connection.jpg" alt="Connect With Friends" className={styles.heroImage}/>
           </div>
         </div>
+      </div>
       </div>
     </UserLayout>
     </>

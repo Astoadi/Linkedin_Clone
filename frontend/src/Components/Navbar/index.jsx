@@ -18,24 +18,21 @@ export default function NavBarComponent() {
     <>
     <div className={styles.container}>
         <div className={styles.navbar}>
-            <h1 style={{cursor:"pointer"}} onClick={()=>router.push("/")}>Pro connect</h1>
+            <h1 className={styles.logo} onClick={()=>router.push("/")}>🚀 ProConnect</h1>
             <div className={styles.navbarOptionContainer}>
                
-               {authState.profileFetched && <div>
-                
-                <div style={{display:"flex",gap:"1.2rem"}}>
-                    {/* <p>Hey, {authState.user?.userId?.name || "User"}</p> */}
-                    <p style={{fontWeight:"bold",cursor:"pointer"}} onClick={()=>router.push('/profile')}>Profile</p>
-                    {authState.profileFetched && 
-                    <p style={{cursor:"pointer",fontWeight:"bolder"}} onClick={handleLogOutUser}>LogOut</p>
-                    }
+               {authState.profileFetched ?(
+                <div className={styles.navMenu}>
+                    <p className={styles.greeting}>Hey, {authState.user?.userId?.name || "User"}</p>
+                    <p className={styles.navLink} onClick={()=>router.push('/profile')}>Profile</p>
+                    <p className={styles.logout} onClick={handleLogOutUser}>LogOut</p>
                 </div>
-
-                </div>}
-
-                {!authState.profileFetched && <div onClick={()=>{
+               ):(
+                <div onClick={()=>{
                     router.push("/login");
-                }} className={styles.buttonJoin}>Be A Part</div>}
+                }} className={styles.buttonJoin}>Be A Part
+                </div>
+               )}
             </div>
         </div>
     </div>
