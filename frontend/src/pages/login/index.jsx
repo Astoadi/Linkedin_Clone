@@ -64,11 +64,11 @@ function LoginComponent() {
                             <div className={styles.inputContainers}>
                                 {!userLoginMethod &&
                                 <div className={styles.inputRow}>
-                                    <input onChange={(e)=>setUsername(e.target.value)} type="text" placeholder='Username' className={styles.inputField} />
-                                    <input onChange={(e)=>setName(e.target.value)} type="text" placeholder='Name' className={styles.inputField} />
+                                    <input onChange={(e)=>setUsername(e.target.value.trim())} type="text" placeholder='Username' className={styles.inputField} />
+                                    <input onChange={(e)=>setName(e.target.value.trim())} type="text" placeholder='Name' className={styles.inputField} />
                                 </div>}
-                                <input onChange={(e)=>setEmail(e.target.value)} type="text" placeholder='Email' className={styles.inputField} />
-                                <input onChange={(e)=>setPassword(e.target.value)} type="text" placeholder='Password' className={styles.inputField} />
+                                <input onChange={(e)=>setEmail(e.target.value.trim())} type="text" placeholder='Email' className={styles.inputField} />
+                                <input onChange={(e)=>setPassword(e.target.value.trim())} type="password" placeholder='Password' className={styles.inputField} />
                                 <div onClick={()=>{
                                     if(userLoginMethod){
                                         handleLogin();
