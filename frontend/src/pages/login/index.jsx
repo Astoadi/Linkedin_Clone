@@ -60,7 +60,11 @@ function LoginComponent() {
                     <div className={styles.cardContainer}>
                         <div className={styles.cardContainer_left}>
                             <p className={styles.cardleft_heading}>{userLoginMethod?"Sign In":"Sign Up"}</p>
-                            <p style={{color:authState.isError?"red":"green"}}>{authState.message?.message}</p>
+                            {authState.message && (
+                            <p style={{ color: authState.isError ? "red" : "green" }}>
+                                {authState.message.message || authState.message}
+                            </p>
+                            )}
                             <div className={styles.inputContainers}>
                                 {!userLoginMethod &&
                                 <div className={styles.inputRow}>
@@ -68,7 +72,7 @@ function LoginComponent() {
                                     <input onChange={(e)=>setName(e.target.value.trim())} type="text" placeholder='Name' className={styles.inputField} />
                                 </div>}
                                 <input onChange={(e)=>setEmail(e.target.value.trim())} type="text" placeholder='Email' className={styles.inputField} />
-                                <input onChange={(e)=>setPassword(e.target.value.trim())} type="password" placeholder='Password' className={styles.inputField} />
+                                <input onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Password' className={styles.inputField} />
                                 <div onClick={()=>{
                                     if(userLoginMethod){
                                         handleLogin();
