@@ -1,21 +1,82 @@
 .userCard{
     display: flex;
     width: 100%;
-    gap: 1.2rem;
-    padding: 1.3rem;
+    background: #ffffff;
+    /* gap: 1.2rem; */
+    padding: 1.4rem 1.6rem;
+    border-radius: 16px;
     align-items: center;
-    box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.userCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
 }
 
 .profilePicture>img{
     border-radius: 50%;
-    width: 6.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    border: 2px solid #e0e0e0;
+}
+.userInfo {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+}
+.userInfo h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+  
+.userInfo p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #777;
 }
 .connectedButton{
-    padding-inline:0.8rem;
-    padding-block:0.3rem;
-    border: 1px solid rgba(3,93,183,0.905);
-    outline: none;
-    color: rgba(3,93,183,0.905);
+    background-color: transparent;
+    border: 2px solid #035db7;
+    color: #035db7;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
+.connectedButton:hover {
+    background-color: #035db7;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(3, 93, 183, 0.3);
+}
+
+@media (max-width: 700px) {
+    .userCard {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.2rem;
+    }
+  
+    .profilePicture > img {
+      width: 4rem;
+      height: 4rem;
+    }
+  
+    .connectedButton {
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+    }
+}
+  
