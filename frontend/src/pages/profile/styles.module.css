@@ -1,38 +1,52 @@
 .container{
-    padding:1.2rem;
-    background: rgb(244, 244, 244);
+    padding:2rem;
+    background: #f5f7fa;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 2rem;
 }
 .backDropContainer{
     width: 100%;
-    height: 30vh;
+    height: 32vh;
     background: url('https://images.pexels.com/photos/5733756/pexels-photo-5733756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     position: relative;
     border-radius: 20px;
 }
 .backDropContainer img{
-    width: 10em;
-    height: 10em;
+    width: 10rem;
+    height: 10rem;
     object-fit: cover;
     border-radius: 50%;
     position: absolute;
-    bottom: -30%;
-    left: 8%;
-    text-align: center;
+    bottom: -3.5rem;
+    left: 2rem;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    /* text-align: center; */
 }
 
 .profileContainer_details{
-    padding-top: 6.6rem;
+    padding-top: 5rem;
+}
+.profileContainer_main {
+    display: flex;
+    gap: 2rem;
+}
+.profile_viewContainer {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 .card{
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap:1.4rem;
+    gap: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
 }
 .card_profileContainer{
     display: flex;
@@ -40,33 +54,31 @@
 }
 .card_profileContainer>img{
     width: 3.4rem;
-    min-width: 3.4rem;
-    height: auto;
     height: 3.4rem;
     object-fit: cover;
+    border-radius: 8px;
 }
 .backDrop_overlay{
-    width: 10em;
-    height: 10em;
-    object-fit: cover;
+    width: 10rem;
+    height: 10rem;
+    /* object-fit: cover; */
     border-radius: 50%;
     position: absolute;
-    bottom: -30%;
-    left: 8%;
-    text-align: center;
-    z-index: 4;
-    transition: all 0.35s;
-    color:rgba(255,255,255,0);
+    bottom: -3.5rem;
+    left: 2rem;
+    /* text-align: center; */
+    /* z-index: 4; */
+    transition: all 0.3s ease;
+    color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .backDrop_overlay:hover{
-    opacity: 0.7;
-    background: black;
-    color:rgba(255,255,255,1);
-    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
 }
 .profileContainer_details input{
     outline: none;
@@ -75,112 +87,146 @@
     padding-block: 9px;
 }
 .nameEdit{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: bold;
+    border: none;
+    outline: none;
+    background: transparent;
 }
 
+.profile_viewContainerUsername {
+    color: #777;
+    font-size: 1rem;
+}
 .workHistoryContainer{
     display: flex;
     /* flex-direction: column; */
-    gap: 1.4rem;
-    padding-top: 1.4rem;
-    width: 100%;
+    gap: 1rem;
+    /* padding-top: 1.4rem;
+    width: 100%; */
     flex-wrap: wrap;
 }
 .workHistoryCard{
-    width: fit-content;
-    min-width: fit-content;
-    padding-inline: 2.5rem;
-    padding-block: 1rem;
+    /* width: fit-content; */
+    min-width: 250px;
+    padding: 1rem 1.5rem;
+    background: white;
     border-radius: 10px;
-    box-shadow: 10px 10px 15px rgb(173,173,173);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
 }
 
 .updateButton{
-    padding-inline:0.8rem;
-    padding-block:0.3rem;
-    border: 1px solid rgba(3,93,183,0.905);
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #035db7;
+    border-radius: 8px;
     outline: none;
-    color: rgba(3,93,183,0.905);
+    font-weight: 600;
+    color: #035db7;
+    background: #fff;
+    transition: all 0.3s ease;
     cursor: pointer;
     width: fit-content;
+}
+.updateButton:hover {
+    background: #035db7;
+    color: white;
+}
+.workHistory {
+    margin-top: 2rem;
+}
+  
+.workHistory h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .bioPlaceHolder{
-    width:80%;
-    outline:none;
-    border:none;
-    padding-inline: 10px;
-    padding-block: 9px;
+    width:100%;
+    max-width: 500px;
+    /* outline:none; */
+    border: 1px solid #ddd;
+    padding: 0.75rem 1rem;
     resize: none;
-    font-size: 1.1rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important;
+    font-size: 1rem;
+    background: #f9f9f9;
+    margin-top: 0.5rem;
+    /* font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif !important; */
 }
 .addWorkButton{
-    border: 2px dotted silver;
+    border: 2px dashed #999;
     padding-inline: 1.3rem;
-    width: fit-content;
-    background: white;
-    padding-block: 1rem;
+    /* width: fit-content; */
+    background: transparent;
+    padding: 0.8rem 1.2rem;
     cursor: pointer;
-    margin: 1rem;
+    margin-top: 1.2rem;
+    color: #333;
+    transition: background 0.3s ease;
+}
+.addWorkButton:hover {
+    background: #f0f0f0;
+}
+.postCard {
+    margin-top: 0.6rem;
 }
 .addWorkContainer{
     position:fixed;
-    z-index: 4;
     top: 0;
     left:0;
     height:100vh;
     width: 100vw;
     overflow: hidden;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
 .addWorkContainer_main{
-    height:fit-content;
-    width: 40vw;
+    /* height:fit-content; */
+    width: 90%;
+    max-width: 500px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
-    position: relative;
+    /* position: relative;
     left:30%;
-    top:10%;
-    padding: 1.4rem;
+    top:10%; */
+    padding: 2rem;
 }
 .inputContainer{
     display: flex;
     flex-direction: column;
-    gap:1.2rem
+    gap:1rem
 }
 .inputField{
-    padding-block: 0.6rem;
-    padding-inline: 1rem;
+    padding: 0.7rem 1rem;
     outline: none;
-    border:1px solid silver;
-    border-radius:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size: 1rem;
+    background: #f9f9f9;
+}
+.inputField:focus {
+    background: #fff;
+    border-color: #0077cc;
 }
 @media(max-width:600px){
-    .profileContainer_main{
+    .profileContainer_main {
         flex-direction: column;
-    }
-    .profile_viewContainer{
-        flex-direction: column ;
-        gap:0.6rem !important;
-    }
-    .profile_viewContainerUsername{
-        display: flex !important;
-        justify-content: flex-start !important;
-        width: 100% !important;
-        padding-inline: 0.6rem !important;
-    }
-    .card_profileContainer>img{
-        width: 20% !important;
-        height: 20% !important;
-    }
-    .card_profileContainer{
-        width: fit-content;
-        justify-content: center;
-        padding-top: 1rem;
-    }
-    .card{
-        flex-direction: row;
-    }
+      }
+    
+      .bioPlaceHolder {
+        width: 100%;
+      }
+    
+      .workHistoryContainer {
+        flex-direction: column;
+      }
+    
+      .backDropContainer img,
+      .backDrop_overlay {
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -3.5rem;
+      }
 }
