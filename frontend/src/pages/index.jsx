@@ -10,6 +10,13 @@ export default function Home() {
     const response=await clientServer.get('/');
     console.log(response.data?.message);
   }
+  const hanleGetStartedButtonClick=()=>{
+    if(localStorage.getItem('token')){
+      router.push('/dashboard');
+    }else{
+      router.push('/login')
+    }
+  }
   useEffect(()=>{
     startingServer();
   },[]);
@@ -28,10 +35,8 @@ export default function Home() {
             <p className={styles.subTitle}>
               A True social media platform, with stories no blufs !
             </p>
-            <div onClick={()=>{
-              router.push("/login")
-            }} className={styles.buttonJoin}>
-              <p>🚀 Get Started</p>
+            <div onClick={hanleGetStartedButtonClick} className={styles.buttonJoin}>
+              <p >🚀 Get Started</p>
             </div>
           </div>
           <div className={styles.mainContainer_right}>
