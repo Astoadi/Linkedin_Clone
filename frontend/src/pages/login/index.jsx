@@ -62,7 +62,7 @@ function LoginComponent() {
                             <p className={styles.cardleft_heading}>{userLoginMethod?"Sign In":"Sign Up"}</p>
                             {authState.message && (
                             <p style={{ color: authState.isError ? "red" : "green" }}>
-                                {authState.message.message || authState.message}
+                                {typeof authState.message === "object" ? authState.message.message : authState.message}
                             </p>
                             )}
                             <div className={styles.inputContainers}>
