@@ -1,81 +1,370 @@
-.container{
-    display: flex;
-    justify-content: center;
-    height: 90vh;
-    align-items: center;
-    background: snow;
-}
-.cardContainer{
-    height:80vh;
-    display:flex;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 80vw;
-    background: white;
-    box-shadow: 10px 10px 15px rgb(173,173,173);
-}
-.cardContainer_left{
-    flex: 0.6;
-    padding: 2rem;
-    text-align: center;
-}
-.cardContainer_right{
-    display: flex;
-    flex: 0.4;
-    justify-content: center;
-    align-items: center;
-    background: #014584bb;
-    color: white;
-    font-size: 1.2rem;
-    padding:1rem;
-}
-.cardleft_heading{
-    font-weight: bold;
-    font-size: 1.8rem;
-}
-.inputContainers{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1.3rem;
-    max-width: 400px;
-    margin: 0 auto;
-    gap: 1.5rem;
-}
-.inputRow{
-    width: fit-content;
-    display: flex;
-    gap: 1.2rem;
-}
-.inputField{
-    padding-inline: 1.3rem;
-    padding-block:0.8rem ;
-    outline: none;
-    border-radius: 10px;
-    border: 1px solid silver;
-    width: 100%;
+/* ==========================================================================
+   ConnectIn - Official LinkedIn-Identical Login & Join Pages
+   ========================================================================== */
+
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--linkedin-warm-bg, #f3f2ef);
+  font-family: var(--linkedin-font, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
 }
 
-.buttonWithOutline{
-    width: 100%;
-    border: 1px solid silver;
-    border-radius: 10px;
-    user-select: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-    padding:0.8rem 1.3rem;
-    background: white;
-    text-align: center;
-    margin-top: 1rem;
-    color:#014584bb;
+/* ==========================================================================
+   1. Top Logo Header
+   ========================================================================== */
+.headerBar {
+  width: 100%;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 24px 24px 12px;
+  display: flex;
+  align-items: center;
 }
 
-@media(max-width:600px){
-    .cardContainer{
-        flex-direction: column;
-    }
-    .cardContainer_right{
-        padding-bottom: 2rem;
-    }
+.brandLogo {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logoSvg {
+  height: 34px;
+  width: auto;
+  display: block;
+}
+
+/* ==========================================================================
+   2. Main Centered Content
+   ========================================================================== */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px 40px;
+  width: 100%;
+}
+
+/* Signup Page Headline above card (Exact LinkedIn copy & style) */
+.signupTopHeadline {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  text-align: center;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+
+/* Single Focused Card (Exact LinkedIn: 352px - 400px max width) */
+.authCard {
+  width: 100%;
+  max-width: 352px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px 24px 32px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Slightly wider card for Sign Up to fit name/username comfortably */
+.authCardSignUp {
+  max-width: 400px;
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.cardSubtitle {
+  font-size: 0.875rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin: 0 0 20px;
+  line-height: 1.4;
+}
+
+/* Feedback / Alert Banners */
+.alertBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  font-size: 0.825rem;
+  line-height: 1.4;
+}
+
+.alertError {
+  background-color: #fef2f2;
+  border: 1px solid #f87171;
+  color: #991b1b;
+}
+
+.alertSuccess {
+  background-color: #f0fdf4;
+  border: 1px solid #4ade80;
+  color: #166534;
+}
+
+.alertText {
+  flex: 1;
+}
+
+/* ==========================================================================
+   3. Form Inputs & Floating Labels (LinkedIn Style)
+   ========================================================================== */
+.formElement {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.nameRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.inputLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hintText {
+  font-weight: 400;
+  font-size: 0.775rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+}
+
+.inputField {
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.inputField:focus {
+  border-color: var(--linkedin-blue, #0a66c2);
+  box-shadow: 0 0 0 1px var(--linkedin-blue, #0a66c2);
+}
+
+.inputError {
+  border-color: #d11124 !important;
+  box-shadow: 0 0 0 1px #d11124 !important;
+}
+
+.inlineError {
+  font-size: 0.75rem;
+  color: #d11124;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Password wrapper with Show / Hide button */
+.passwordWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInput {
+  padding-right: 64px;
+}
+
+.showPasswordBtn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: var(--linkedin-blue, #0a66c2);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.showPasswordBtn:hover {
+  background-color: rgba(10, 102, 194, 0.08);
+}
+
+/* Forgot password link */
+.forgotPasswordLink {
+  align-self: flex-start;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--linkedin-blue, #0a66c2);
+  cursor: pointer;
+  margin-top: -4px;
+  margin-bottom: 4px;
+  text-decoration: none;
+}
+
+.forgotPasswordLink:hover {
+  text-decoration: underline;
+}
+
+/* Legal text for sign up */
+.termsText {
+  font-size: 0.75rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  line-height: 1.45;
+  margin: 0;
+  text-align: center;
+}
+
+.termsLink {
+  color: var(--linkedin-blue, #0a66c2);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.termsLink:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button (Pill shaped, official height 52px) */
+.submitBtn {
+  margin-top: 6px;
+  height: 52px;
+  border-radius: 28px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================================================
+   4. Switch Mode Section Beneath the Card
+   ========================================================================== */
+.switchModeWrapper {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+}
+
+.switchActionLink {
+  color: var(--linkedin-blue, #0a66c2);
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.switchActionLink:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   5. Minimalist Centered Footer (Exact LinkedIn)
+   ========================================================================== */
+.footerSection {
+  width: 100%;
+  padding: 16px 24px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerInner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 960px;
+}
+
+.footerItem {
+  font-size: 0.75rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footerItem:hover {
+  text-decoration: underline;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.footerBrand {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+}
+
+/* ==========================================================================
+   6. Mobile Responsiveness
+   ========================================================================== */
+@media (max-width: 600px) {
+  .pageContainer {
+    background-color: #ffffff;
+  }
+
+  .headerBar {
+    padding: 16px 20px 8px;
+  }
+
+  .mainContent {
+    padding: 12px 20px 32px;
+  }
+
+  .signupTopHeadline {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .authCard {
+    max-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .nameRow {
+    grid-template-columns: 1fr;
+  }
+
+  .inputField {
+    font-size: 16px; /* Disables iOS auto-zoom */
+  }
+
+  .cardTitle {
+    font-size: 1.75rem;
+  }
+
+  .footerInner {
+    gap: 12px 14px;
+  }
 }

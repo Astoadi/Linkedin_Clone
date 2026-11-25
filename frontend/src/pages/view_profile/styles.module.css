@@ -1,136 +1,318 @@
-.container{
-    padding:1.2rem;
-    background: #f4f6f9;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    min-height: 100vh;
-}
-.backDropContainer{
-    width: 100%;
-    height: 32vh;
-    background: url('https://images.pexels.com/photos/5733756/pexels-photo-5733756.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
-    /* background-repeat: no-repeat; */
-    background-size: cover;
-    position: relative;
-    border-radius: 20px;
-}
-.backDropContainer img{
-    width: 10rem;
-    height: 10rem;
-    object-fit: cover;
-    border-radius: 50%;
-    position: absolute;
-    bottom: -3.5rem;
-    left: 2rem;
-    border: 4px solid #fff;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* text-align: center; */
+/* ==========================================================================
+   ConnectIn - View Public Profile Styles
+   Official LinkedIn Public Member Profile View
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: var(--linkedin-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
 }
 
-.profileContainer_details{
-    padding-top: 5rem;
+.backDropContainer {
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #a0b4b7 0%, #b8cbcf 40%, #d8e5e8 100%);
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
-.profileContainer_flex{
-    display:flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+
+.backDropContainer img,
+.backDrop,
+.backDropFallback {
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -48px;
+  left: 24px;
+  border: 4px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  background-color: #eef3f8;
+  z-index: 5;
 }
-.card{
-    display: flex;
-    padding: 1rem;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    gap:1rem;
+
+.backDropFallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--linkedin-blue, #0a66c2);
+  font-size: 2.25rem;
+  font-weight: 700;
 }
-.card_profileContainer{
-    display: flex;
+
+.profileContainer_details {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 60px 24px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  margin-top: -16px;
 }
-.card_profileContainer>img{
-    width: 4.4rem;
-    height: 4.4rem;
-    object-fit: cover;
-    border-radius: 8px;
+
+.errorBanner {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.875rem;
+  margin-bottom: 14px;
 }
-.connectBtn{
-    padding: 0.5rem 1rem;
-    background: #035db7;
-    outline: none;
-    border: none;
-    color: white;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s ease;
+
+.profileContainer_flex {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
 }
-.connectBtn:hover {
-    background: #024a93;
+
+.mainInfoCol {
+  flex: 1.8;
+  min-width: 0;
 }
-.connectedButton{
-    padding: 0.5rem 1rem;
-    border: 2px solid #035db7;
-    /* outline: none; */
-    background: white;
-    color: #035db7;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: default;
+
+.activityCol {
+  flex: 1;
+  min-width: 220px;
 }
+
+.activityHeading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.nameHeaderRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.profileContainer_flex h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0;
+  line-height: 1.25;
+}
+
+.usernameText {
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.headlineText {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.85));
+  margin: 6px 0 0;
+}
+
+.bioText {
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.7));
+  font-size: 0.925rem;
+  margin: 12px 0 0;
+  line-height: 1.45;
+}
+
+.actionsRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.connectedButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 20px;
+  min-height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  background: transparent;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.7));
+  border-radius: 28px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.downloadResumeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--linkedin-blue, #0a66c2);
+  color: var(--linkedin-blue, #0a66c2);
+  background: transparent;
+  transition: all 0.15s ease;
+}
+
+.downloadResumeBtn:hover:not(:disabled) {
+  background-color: #ebf4fd;
+  transform: scale(1.06);
+}
+
+.downloadResumeBtn:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.downloadResumeBtn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.postCard {
+  margin-top: 8px;
+}
+
+.card {
+  display: flex;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  align-items: center;
+  gap: 10px;
+}
+
+.card_profileContainer {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.card_profileContainer > img {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 4px;
+  background-color: #eef3f8;
+}
+
+.card p {
+  margin: 0;
+  font-size: 0.825rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.7));
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .workHistory {
-    margin-top: 2rem;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
+
 .workHistory h4 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #222;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
-   
-.workHistoryContainer{
-    display: flex;
-    gap: 1.2rem;
-    padding-top: 1rem;
-    flex-wrap: wrap;
+
+.workHistoryContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
-.workHistoryCard{
-    min-width: fit-content;
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    min-width: 250px;
-    transition: transform 0.3s ease;
+
+.workHistoryCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+  background: #fafaf9;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 6px;
 }
-.workHistoryCard:hover {
-    transform: translateY(-4px);
+
+.workHistoryCard p:first-child {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0;
 }
-@media(max-width:1200px){
-    .profileContainer_flex{
-        flex-direction: column;
-        gap:2rem;
-    }
-    .card{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .backDropContainer img {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+
+.workHistoryCard p:last-child {
+  font-size: 0.825rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin: 0;
 }
+
+.emptyNotice {
+  font-size: 0.875rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin: 0;
+}
+
 @media (max-width: 768px) {
-    .backDropContainer img {
-      width: 8rem;
-      height: 8rem;
-      bottom: -4rem;
-    }
-  
-    .workHistoryCard {
-      width: 100%;
-    }
-  
-    .connectBtn, .connectedButton {
-      width: 100%;
-      text-align: center;
-    }
+  .profileContainer_flex {
+    flex-direction: column;
+  }
+
+  .activityCol {
+    width: 100%;
+  }
+
+  .backDropContainer {
+    height: 140px;
+  }
+
+  .backDropContainer img,
+  .backDrop,
+  .backDropFallback {
+    width: 104px;
+    height: 104px;
+    bottom: -36px;
+    left: 16px;
+  }
+
+  .profileContainer_details {
+    padding: 48px 16px 20px;
+  }
+
+  .workHistory {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .backDropContainer img,
+  .backDrop,
+  .backDropFallback {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .profileContainer_details {
+    padding-top: 54px;
+    text-align: center;
+  }
+
+  .nameHeaderRow,
+  .actionsRow {
+    justify-content: center;
+  }
 }

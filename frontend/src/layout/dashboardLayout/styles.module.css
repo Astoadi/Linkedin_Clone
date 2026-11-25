@@ -1,114 +1,516 @@
-.container {
-    font-family: "Poppins", sans-serif;
-}
-.homeContainer{
-    display: flex;
-    width: 100%;
-    padding: 1.5rem;
-    gap: 2rem;
-}
-.homeContainer>div:nth-child(odd){
-    flex:0.2;
-}
-.homeContainer>div:nth-child(even){
-    flex:0.6;
-}
-.homeContainer_leftBar{
-    display: flex;
-    flex-direction: column;
-    gap:1.2rem;
-    align-items: flex-start;
-    border-right: 1px solid #e1e1e1;
-    padding-right: 1rem;
+/* ==========================================================================
+   ConnectIn - Dashboard Layout Styles
+   Official LinkedIn 3-Column Grid Design System
+   ========================================================================== */
+
+.layoutContainer {
+  background-color: var(--linkedin-warm-bg, #f3f2ef);
+  min-height: calc(100vh - 53px);
+  width: 100%;
+  font-family: var(--linkedin-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif);
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
 }
 
-.sideBarOption{
-    display: flex;
-    align-items: center;
-    /* font-size: 1.2rem; */
-    gap: 1rem;
-    padding: 0.5rem 0.8rem;
-    border-radius: 10px;
-    /* max-width: 80%;
-    width: 80%; */
-    /* margin: 0 auto; */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    color: #333;
-    /* min-width: 30%; */
-}
-.sideBarOption:hover{
-    background: #f9f9f9;
-    transform: translateX(3px);
-}
-.sideBarOption>svg{
-    height: 1.4em;
-    width: 1.4em;
-    color:#555;
-}
-.homeContainer_extraContainer{
-    border-left: 1px solid #e1e1e1;
-    padding-left: 1rem;
-}
-.topProfileHeader {
-    font-size: 1.1rem;
-    margin-bottom: 0.8rem;
-    color: #333;
-}
-.profileCard {
-    padding: 0.6rem 1rem;
-    margin-bottom: 0.6rem;
-    background: #f5f8fa;
-    border-radius: 10px;
-    transition: background 0.2s;
-    font-weight: 500;
-    color: #222;
-}
-  
-.profileCard:hover {
-    background: #e0f0ff;
-}
-.homeContainer_feedContainer{
-    min-height: 100vh;
-    padding-inline:1rem;
+.mainGrid {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 560px) 300px;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
 }
 
-.mobileNavBar{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 7vh;
+/* ==========================================================================
+   Left Sidebar: User Profile Card & Navigation Shortcuts
+   ========================================================================== */
+
+.leftSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.stickyLeft {
+  position: sticky;
+  top: 73px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.stickyLeft::-webkit-scrollbar {
+  display: none;
+}
+
+.userCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  text-align: center;
+}
+
+.cardBanner {
+  height: 56px;
+  background: linear-gradient(135deg, #a0b4b7 0%, #c4d7dc 50%, #dbe7e9 100%);
+  width: 100%;
+}
+
+.avatarWrapper {
+  margin-top: -36px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+
+.userAvatar {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  background: #eef3f8;
+  display: block;
+}
+
+.avatarFallback {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  background: #eef3f8;
+  color: var(--linkedin-blue, #0a66c2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.userMeta {
+  padding: 12px 14px 16px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.userName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0;
+  cursor: pointer;
+  line-height: 1.3;
+}
+
+.userName:hover {
+  text-decoration: underline;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.userHeadline {
+  font-size: 0.775rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin: 4px 0 0;
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.userStats {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.userStats:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.statRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  line-height: 1.2;
+}
+
+.statSubtitle {
+  font-size: 0.725rem;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  font-weight: 600;
+  text-align: left;
+}
+
+.statValue {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.cardFooter {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  font-size: 0.775rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+}
+
+.cardFooter:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.cardFooter svg {
+  width: 16px;
+  height: 16px;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+}
+
+/* Nav links mini-card */
+.navCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 8px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.7));
+}
+
+.navItem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.navItemActive {
+  background-color: #eef3f8;
+  color: var(--linkedin-blue, #0a66c2);
+  border-left: 3px solid var(--linkedin-blue, #0a66c2);
+}
+
+.navItem svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Center Feed Column
+   ========================================================================== */
+
+.feedColumn {
+  min-width: 0;
+  width: 100%;
+}
+
+/* ==========================================================================
+   Right Sidebar: "Add to your feed" & Footer
+   ========================================================================== */
+
+.rightSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.stickyRight {
+  position: sticky;
+  top: 73px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: calc(100vh - 85px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.stickyRight::-webkit-scrollbar {
+  display: none;
+}
+
+.widgetCard {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 14px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.widgetHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.widgetTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0;
+}
+
+.widgetInfoIcon {
+  width: 16px;
+  height: 16px;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+}
+
+.recommendationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recItem {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.recAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #eef3f8;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.recAvatarFallback {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eef3f8;
+  color: var(--linkedin-blue, #0a66c2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1rem;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.recMeta {
+  flex: 1;
+  min-width: 0;
+}
+
+.recName {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  margin: 0;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.recName:hover {
+  text-decoration: underline;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.recHeadline {
+  font-size: 0.75rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin: 2px 0 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+}
+
+.recButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border: 1px solid var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  border-radius: 20px;
+  background: transparent;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.75));
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.recButton:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  color: var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+  box-shadow: inset 0 0 0 1px var(--linkedin-text-primary, rgba(0, 0, 0, 0.9));
+}
+
+.recButton svg {
+  width: 14px;
+  height: 14px;
+}
+
+.viewAllLink {
+  display: block;
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  margin-top: 12px;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.15s ease;
+}
+
+.viewAllLink:hover {
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.sidebarFooter {
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 12px;
+  margin-bottom: 12px;
+}
+
+.footerLink {
+  font-size: 0.725rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+.copyright {
+  font-size: 0.725rem;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+}
+
+.brandLogoSmall {
+  font-weight: 700;
+  color: var(--linkedin-blue, #0a66c2);
+}
+
+/* ==========================================================================
+   Mobile Bottom Navigation Bar (LinkedIn Style)
+   ========================================================================== */
+
+.mobileBottomNav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #ffffff;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 4px calc(env(safe-area-inset-bottom, 0px) + 2px);
+}
+
+.mobileNavItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--linkedin-text-secondary, rgba(0, 0, 0, 0.6));
+  font-size: 0.675rem;
+  font-weight: 500;
+  min-width: 52px;
+  height: 100%;
+  transition: color 0.15s ease;
+}
+
+.mobileNavItem svg {
+  width: 22px;
+  height: 22px;
+}
+
+.mobileNavItemActive {
+  color: var(--linkedin-blue, #0a66c2);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 225px minmax(0, 1fr);
+    max-width: 860px;
+  }
+
+  .rightSidebar {
     display: none;
-    justify-content: space-around;
-    background: linear-gradient(90deg, #fd748b, #ffb88c);
-    align-items: center;
-    cursor: pointer;
-    z-index: 100;
-}
-.mobileNavBar svg{
-    height: 1.4rem;
-    width: 1.4rem;
-    color: white;
-}
-.singleNavBar_mobileView:hover {
-    transform: scale(1.1);
-    transition: all 0.2s ease;
+  }
 }
 
-@media(max-width:600px) { /*it means that it will work only up to the 600px after that it will not work*/
-    .homeContainer_extraContainer,
-    .homeContainer_leftBar{
-        display: none;
-    }
-    .homeContainer{
-        display: block;
-        padding: 1rem;
-    }
-    .mobileNavBar{
-        display: flex;
-    }
-    .homeContainer_feedContainer{
-        padding-bottom:10vh;
-    }
+@media (max-width: 768px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+    padding: 12px 10px 72px;
+    gap: 12px;
+  }
+
+  .leftSidebar {
+    display: none;
+  }
+
+  .mobileBottomNav {
+    display: flex;
+  }
 }
